@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import {BrowserRouter, Route, NavLink, Switch} from "react-router-dom";
+import {BrowserRouter, Route, NavLink, Switch, Redirect} from "react-router-dom";
 
 import Courses from './containers/Courses/Courses';
 import Course from './containers/Course/Course';
@@ -50,6 +50,7 @@ class App extends Component {
                         <Route path="/users" component={Users} />
                         {/* <Route path="/courses/:courseId" components={Course} /> */}
                         <Route path="/courses" component={Courses} />
+                        <Redirect from="/all-courses" to="/courses"/>
                         <Route component={NoMatch} />
                     </Switch>
                 </React.Fragment>
