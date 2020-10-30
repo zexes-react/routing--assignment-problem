@@ -5,6 +5,8 @@ import {BrowserRouter, Route, NavLink, Switch} from "react-router-dom";
 import Courses from './containers/Courses/Courses';
 import Course from './containers/Course/Course';
 import Users from './containers/Users/Users';
+import NoMatch from './components/NoMatch/NoMatch';
+
 
 class App extends Component {
     render() {
@@ -41,13 +43,14 @@ class App extends Component {
                             </li>
                         </ul>
                     </nav>
-                    {/*<Route path="/courses" exact component={Courses}/>*/}
-                    {/*<Route path="/users" component={Users}/>*/}
-                    {/*<Route path="/courses/:courseId" component={Course}/>*/}
+                    {/*<Route path="/courses" exact components={Courses}/>*/}
+                    {/*<Route path="/users" components={Users}/>*/}
+                    {/*<Route path="/courses/:courseId" components={Course}/>*/}
                     <Switch>
                         <Route path="/users" component={Users} />
-                        {/* <Route path="/courses/:courseId" component={Course} /> */}
+                        {/* <Route path="/courses/:courseId" components={Course} /> */}
                         <Route path="/courses" component={Courses} />
+                        <Route component={NoMatch} />
                     </Switch>
                 </React.Fragment>
             </BrowserRouter>
